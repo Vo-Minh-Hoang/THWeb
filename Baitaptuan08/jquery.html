@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bookstore Online</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <h1>Chào mừng đến Bookstore Online</h1>
+    <script>
+        $(document).ready(function() {
+            console.log("jQuery đã sẵn sàng!");
+        });
+    </script>
+
+    <div id="book-list">
+        <h2 id="title">Sách bán chạy</h2>
+        <p id="price">120.000đ</p>
+    </div>
+    <div class="book" data-genre="fiction">
+        <h3>Đắc Nhân Tâm</h3>
+        <p class="price">120.000đ</p>
+    </div>
+    <div class="book" data-genre="skill">
+        <h3>Tư Duy Nhanh và Chậm</h3>
+        <p class="price">150.000đ</p>
+    </div>
+    <div class="book" data-genre="fiction">
+        <h3>Hai Số Phận</h3>
+        <p class="price">200.000đ</p>
+    </div>
+    <div class="book" data-genre="fiction">
+        <h3>Nhà Giả Kim</h3>
+        <p class="price">89.000đ</p>
+    </div>
+    <input type="text" id="search-box" placeholder="Nhập tên sách">
+    <button id="btn-read">Đọc</button>
+    <button id="btn-change">Thay đổi</button>
+    </div>
+
+    <script>
+        $("#book-list").css("background", "#f4f4f4"); // theo ID
+        $(".book").css("border-color", "orange"); // theo class
+        $("h3").css("color", "green"); // theo thẻ
+        console.log("Số cuốn sách:", $(".book").length); // đếm phần tử
+    </script>
+    <script>
+        $(".book:first").css("background", "#fadbd8"); // đầu tiên
+        $(".book:last").css("background", "#d5f5e3"); // cuối cùng
+        $(".book:eq(1)").css("background", "#fcf3cf"); // vị trí số 1 (đếm từ 0)
+        $(".book:even").css("font-style", "italic"); // vị trí chẵn (0,2,..)
+        $("[data-genre='fiction']").css("border", "3px solid blue"); // theo thuộc tính
+        $("#book-list > .book").css("padding", "15px"); // con trực tiếp
+        $(".book h3:contains('Tư Duy')").css("color", "red"); // chứa chữ
+    </script>
+    <script>
+        $("#btn-read").on("click", function() {
+            console.log("text:", $("#title").text());
+            console.log("html:", $("#price").html());
+            console.log("val :", $("#search-box").val());
+        });
+
+        $("#btn-change").on("click", function() {
+            $("#title").text("Sách mới về <b>tuần này</b>"); // <b> hiện nguyên chữ
+            $("#price").html("<strong>99.000đ</strong>"); // <strong> được render
+            $("#search-box").val("Nhà giả kim");
+        });
+    </script>
+</body>
+
+</html>
