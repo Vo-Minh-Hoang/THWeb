@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1 - Kiểm tra chuỗi</title>
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <h1>BÀI 1: Chỉ gồm chữ số</h1>
+
+    <input type="text" id="txt">
+    <button id="Click">Kiểm tra chuỗi</button>
+
+    <p id="result"></p>
+
+    <script>
+        $("#Click").on("click", function() {
+            let s = $("#txt").val();
+            let pattern = /^\d+$/;
+
+            if (pattern.test(s)) {
+                $("#result").text("Chuỗi hợp lệ!");
+            } else {
+                $("#result").text("Chuỗi không hợp lệ!");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

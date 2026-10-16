@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Bài 6. Mã lớp</h1>
+
+    <input type="text" id="txt">
+    <button id="Click">Kiểm tra Mã lớp</button>
+
+    <p id="result"></p>
+
+    <script>
+        $("#Click").on("click", function() {
+            let s = $("#txt").val();
+            let pattern = /^[A-Z0-9]{5}$/;
+
+            if (pattern.test(s)) {
+                $("#result").text("Mã lớp hợp lệ!");
+            } else {
+                $("#result").text("Mã lớp không hợp lệ!");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
